@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Lista de Clientes</h2>
+    <button class="btn btn-primary" routerLink="/client-form">Novo Cliente</button>
+  </div>
+
+  <div *ngIf="clients.length === 0" class="alert alert-info" role="alert">
+    Nenhum cliente cadastrado.
+  </div>
+
+  <table *ngIf="clients.length > 0" class="table table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>E-mail</th>
+        <th>Idade</th>
+        <th>Cidade/UF</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of clients">
+        <td>{{ client.id }}</td>
+        <td>{{ client.nome }}</td>
+        <td>{{ client.cpf }}</td>
+        <td>{{ client.email }}</td>
+        <td>{{ client.idade }}</td>
+        <td>{{ client.cidade }}/{{ client.uf }}</td>
+        <td>
+          <button class="btn btn-sm btn-warning me-2" (click)="editClient(client.id)">Editar</button>
+          <button class="btn btn-sm btn-danger" (click)="deleteClient(client.id)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

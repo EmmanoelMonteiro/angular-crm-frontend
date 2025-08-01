@@ -1,12 +1,19 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common'; // Importe CommonModule para usar *ngIf, *ngFor etc
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [
+    CommonModule, // Módulo para diretivas estruturais
+    RouterOutlet, // Necessário para que o <router-outlet> funcione
+    RouterLink,   // Necessário para o routerLink nos botões
+    RouterLinkActive // Necessário para a classe 'active'
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
-  protected readonly title = signal('angular-crm-frontend');
+  title = 'angular-crm-frontend';
 }

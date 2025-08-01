@@ -1,0 +1,68 @@
+<div class="container mt-4">
+  <h2>{{ isEditMode ? 'Editar Cliente' : 'Novo Cliente' }}</h2>
+  <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="id" class="form-label">Id do Clinte</label>
+      <input type="number" readonly class="form-control" id="id" formControlName="id">
+    </div>
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" formControlName="nome"
+             [class.is-invalid]="isInvalid('nome')">
+      <div *ngIf="isInvalid('nome')" class="invalid-feedback">
+        Nome é obrigatório.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="cpf" class="form-label">CPF (11 dígitos)</label>
+      <input type="text" class="form-control" id="cpf" formControlName="cpf"
+             [class.is-invalid]="isInvalid('cpf')">
+      <div *ngIf="isInvalid('cpf')" class="invalid-feedback">
+        CPF é obrigatório e deve ter 11 dígitos numéricos.
+      </div>
+    </div>
+        <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="text" class="form-control" id="email" formControlName="email">
+    </div>
+    <div class="mb-3">
+      <label for="idade" class="form-label">Idade</label>
+      <input type="number" class="form-control" id="idade" formControlName="idade"
+             [class.is-invalid]="isInvalid('idade')">
+      <div *ngIf="isInvalid('idade')" class="invalid-feedback">
+        Idade é obrigatória e deve ser um número não negativo.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="logradouro" class="form-label">Logradouro</label>
+      <input type="text" class="form-control" id="logradouro" formControlName="logradouro">
+    </div>
+    <div class="mb-3">
+      <label for="numero" class="form-label">Número</label>
+      <input type="number" class="form-control" id="numero" formControlName="numero">
+    </div>
+    <div class="mb-3">
+      <label for="bairro" class="form-label">Bairro</label>
+      <input type="text" class="form-control" id="bairro" formControlName="bairro">
+    </div>
+    <div class="mb-3">
+      <label for="cidade" class="form-label">Cidade</label>
+      <input type="text" class="form-control" id="cidade" formControlName="cidade">
+    </div>
+    <div class="mb-3">
+      <label for="uf" class="form-label">UF</label>
+      <select class="form-select" id="uf" formControlName="uf"
+              [class.is-invalid]="isInvalid('uf')">
+        <option value="" disabled>Selecione um estado</option>
+        <option *ngFor="let uf of ufOptions" [value]="uf">{{ uf }}</option>
+      </select>
+      <div *ngIf="isInvalid('uf')" class="invalid-feedback">
+        UF é obrigatório.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success me-2" [disabled]="!clientForm.valid">
+      {{ isEditMode ? 'Salvar Alterações' : 'Cadastrar Cliente' }}
+    </button>
+    <button type="button" class="btn btn-secondary" routerLink="/clients">Cancelar</button>
+  </form>
+</div>
