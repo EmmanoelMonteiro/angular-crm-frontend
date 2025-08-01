@@ -1,59 +1,94 @@
-# AngularCrmFrontend
+# 🚀 Angular CRM Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+Este é o frontend da aplicação de gerenciamento de clientes (CRM), desenvolvido com o framework Angular. Ele foi criado para consumir e interagir com a API RESTful `crm_api_clientes`, permitindo que o usuário realize operações CRUD (Criar, Ler, Atualizar, Excluir) de forma simples e intuitiva.
 
-## Development server
+A aplicação segue a estrutura de componentes autônomos (Standalone Components) do Angular, ideal para projetos modernos e didáticos.
 
-To start a local development server, run:
+## 🎯 Funcionalidades
 
+* **Listar Clientes:** Exibe uma tabela com todos os clientes cadastrados na base de dados.
+* **Adicionar Cliente:** Permite o cadastro de um novo cliente através de um formulário.
+* **Editar Cliente:** Permite a edição dos dados de um cliente existente.
+* **Excluir Cliente:** Exclui permanentemente um cliente da base de dados.
+
+## 🛠️ Tecnologias Utilizadas
+
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+* **Angular:** Framework para construção de interfaces de usuário.
+* **TypeScript:** Superconjunto do JavaScript, usado para tipagem estática.
+* **Bootstrap 5:** Framework CSS para um layout simples e responsivo.
+* **Angular CLI:** Ferramenta de linha de comando para inicializar e gerenciar projetos Angular.
+* **RxJS:** Biblioteca para programação reativa, utilizada na comunicação assíncrona com a API
+
+## 📋 Pré-requisitos
+
+Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+
+* **Node.js e npm:** Versão 16.x ou superior.
+* **Angular CLI:** Instale-o globalmente com `npm install -g @angular/cli.`
+
+## ⚙️ Backend Necessário
+
+Este frontend depende diretamente de um backend em execução. A aplicação foi projetada para se comunicar com a API `crm_api_clientes`.
+
+Para que o frontend funcione corretamente, o backend deve estar em execução na porta padrão `8080`.
+
+🔗 Repositório do Backend: https://github.com/EmmanoelMonteiro/crm_api_clientes.git
+
+Siga as instruções no `README.md` do repositório do backend para configurá-lo e iniciá-lo primeiro.
+
+## 🚀 Como Iniciar a Aplicação
+
+Siga estes passos para configurar e executar o projeto em sua máquina local.
+
+**1. Clone o Repositório**
 ```bash
-ng serve
+git clone https://github.com/EmmanoelMonteiro/angular-crm-frontend.git
+cd angular-crm-frontend
+```
+Observação: Substitua a URL acima pela URL do seu repositório, caso tenha feito um fork.
+
+**2. Instale as Dependências**
+
+Dentro do diretório do projeto, execute o comando para instalar todas as dependências do Node.js:
+```bash
+npm install
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+**3. Inicie o Servidor de Desenvolvimento**
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Execute o comando para iniciar o servidor de desenvolvimento do Angular. O parâmetro `--open` abrirá automaticamente a aplicação em seu navegador padrão.
 
 ```bash
-ng generate component component-name
+ng serve --open
+```
+O frontend estará disponível em http://localhost:4200.
+
+## 📂 Estrutura do Projeto
+
+A estrutura de pastas principal do projeto Angular é a seguinte:
+
+```
+angular-crm-frontend/
+└── src/
+    └── app/
+        ├── components/
+        │   ├── client-form/      (Componente para adicionar/editar clientes)
+        │   └── client-list/       (Componente para listar clientes)
+        ├── models/
+        │   └── client.model.ts    (Modelo de dados do cliente)
+        ├── services/
+        │   └── client.service.ts  (Serviço de comunicação com a API)
+        ├── app.component.ts       (Componente principal da aplicação)
+        ├── app.config.ts          (Configurações do projeto standalone)
+        └── app.routes.ts          (Definição das rotas da aplicação)
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+📚 Links Úteis
 
-```bash
-ng generate --help
-```
+* [[Documentação Oficial do Angular]https://angular.io/docs]
 
-## Building
+* [[Documentação Oficial do Bootstrap 5]https://getbootstrap.com/docs/]
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* [[Backend: crm_api_clientes]https://www.google.com/search?q=https://github.com/EmmanoelMonteiro/crm_api_clientes.git]
