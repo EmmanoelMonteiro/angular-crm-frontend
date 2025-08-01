@@ -87,8 +87,6 @@ angular-crm-frontend/
 
 📚 Links Úteis
 
-* [[Documentação Oficial do Angular]https://angular.io/docs]
-
-* [[Documentação Oficial do Bootstrap 5]https://getbootstrap.com/docs/]
-
-* [[Backend: crm_api_clientes]https://www.google.com/search?q=https://github.com/EmmanoelMonteiro/crm_api_clientes.git]
+* [Documentação Oficial do Angular](https://angular.io/docs)
+* [Documentação Oficial do Bootstrap 5](https://getbootstrap.com/docs/)
+* [Backend: crm_api_clientes](https://www.google.com/search?q=https://github.com/EmmanoelMonteiro/crm_api_clientes.git)
